@@ -41,7 +41,7 @@ public class PostsPresenterTest{
         //define return values
         when(postsPresenter.postsAPI.getPostsObservable()).thenReturn(postsObservable);
         when(postsObservable.subscribeOn(Schedulers.io())).thenReturn(postsObservable);
-        when(postsObservable.observeOn(AndroidSchedulers.mainThread())).thenReturn(postsObservable);
+        when(postsObservable.observeOn(AndroidSchedulers.mainThread())).thenReturn(null);
 
         //call test method
         postsPresenter.loadPostsFromAPI();
